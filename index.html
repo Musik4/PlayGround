@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131c">
+  <link rel="icon" href="data:,">
+  <title>PyQuest — Learn Python by playing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="PyQuest home"><span class="brand-mark">{ }</span><span>py<span class="brand-accent">quest</span></span></a>
+      <div class="top-center"><span class="course-label">PYTHON FOUNDATIONS</span><span class="top-divider"></span><span class="chapter-label">The little bits that make big things</span></div>
+      <div class="top-stats"><div class="streak"><span class="flame">✦</span><span id="streak-count">0</span><span class="stat-word">streak</span></div><div class="xp-pill"><span class="xp-spark">✧</span><span id="xp-count">0</span><span>XP</span></div></div>
+    </header>
+
+    <main class="layout">
+      <aside class="rail" aria-label="Course levels">
+        <div class="rail-head"><span class="rail-kicker">YOUR JOURNEY</span><span class="rail-count" id="rail-count">01 / 04</span></div>
+        <div class="level-list" id="level-list"></div>
+        <div class="rail-note"><span class="note-icon">✳</span><div><strong>Small steps.</strong><br>Big brain energy.</div></div>
+        <div class="profile"><div class="avatar">🐣</div><div class="profile-copy"><strong>Code sprout</strong><span>Future builder</span></div><span class="profile-dots">···</span></div>
+      </aside>
+
+      <section class="main-area">
+        <div class="lesson-heading">
+          <div class="lesson-meta"><span class="lesson-tag" id="lesson-tag">LEVEL 01</span><span class="meta-dot"></span><span id="lesson-concept">SEQUENCE</span><span class="difficulty" id="difficulty">●○○</span></div>
+          <h1 id="lesson-title">A little <em>right</em> turn</h1>
+          <p id="lesson-description">Give your bot a few instructions, in the right order.</p>
+        </div>
+        <div class="workspace">
+          <section class="game-panel panel">
+            <div class="panel-top"><div><span class="eyebrow">THE PLAYGROUND</span><h2 id="board-title">Sunny-side path</h2></div><div class="world-status"><span class="live-dot"></span><span id="world-status">READY TO RUN</span></div></div>
+            <div class="board-wrap">
+              <div class="board" id="board" role="img" aria-label="Grid playground">
+                <div class="board-grid" id="board-grid"></div>
+                <svg class="trail-svg" id="trail-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline id="trail-line" points=""></polyline></svg>
+                <div class="goal-marker" id="goal-marker" aria-hidden="true">⌂</div>
+                <div class="gem-marker" id="gem-marker" aria-hidden="true">✦</div>
+                <div class="bot-marker" id="bot-marker" aria-hidden="true"><span>🤖</span></div>
+                <div class="board-toast" id="board-toast"></div>
+              </div>
+              <div class="board-legend"><span><i class="legend-bot">●</i> your bot</span><span><i class="legend-gem">✦</i> code crystal</span><span><i class="legend-goal">⌂</i> goal</span><span class="move-count" id="move-count">0 moves</span></div>
+            </div>
+            <div class="mission-card"><div class="mission-icon" id="mission-icon">✦</div><div class="mission-copy"><span class="eyebrow">YOUR MISSION</span><p id="mission-text">Move to the crystal and collect it. Then find the little flag.</p></div><div class="mission-badge" id="mission-badge">0 / 2</div></div>
+          </section>
+
+          <section class="code-panel panel">
+            <div class="code-head"><div><span class="eyebrow">YOUR CODE</span><div class="file-name"><span class="python-icon">●</span> adventure.py <span class="unsaved-dot" id="unsaved-dot"></span></div></div><button class="reset-button" id="reset-button" title="Restore starter code"><span>↺</span> Reset</button></div>
+            <div class="editor-wrap"><div class="line-numbers" id="line-numbers">1</div><textarea id="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-label="Python code editor"></textarea></div>
+            <div class="editor-hint"><span class="hint-key">TIP</span><span id="editor-tip">Python reads your instructions from top to bottom.</span><button class="hint-button" id="hint-button">Need a hint? <span>↗</span></button></div>
+            <div class="command-row"><span class="eyebrow">COMMANDS</span><button class="command-chip" data-insert="move_right()">move_right()</button><button class="command-chip" data-insert="move_down()">move_down()</button><button class="command-chip" data-insert="collect()">collect()</button><button class="command-chip" data-insert="for step in range(3):\n    move_right()">for loop</button></div>
+            <div class="run-footer"><div class="run-caption"><span class="keyboard-icon">↵</span> <span>Run your code and see what happens</span></div><button class="run-button" id="run-button"><span class="play-icon">▶</span> Run code <span class="run-shortcut">Ctrl ↵</span></button></div>
+          </section>
+        </div>
+        <section class="feedback panel" id="feedback" aria-live="polite"><div class="feedback-icon" id="feedback-icon">✦</div><div class="feedback-copy"><strong id="feedback-title">Ready when you are!</strong><span id="feedback-message">Add a command, then press Run code to bring your bot to life.</span></div><div class="feedback-right" id="feedback-right"></div></section>
+        <footer class="page-footer"><span>Made for curious minds <span class="heart">♥</span></span><span>NO EXPERIENCE NEEDED <span class="footer-dot">·</span> JUST PRESS RUN</span></footer>
+      </section>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="win-modal" aria-hidden="true"><div class="win-card"><div class="win-confetti">✦　✧　✦</div><div class="win-emoji" id="win-emoji">🎉</div><span class="eyebrow">MISSION COMPLETE</span><h2 id="win-title">You did it!</h2><p id="win-copy">Your bot made it across the path.</p><div class="win-reward"><span>✧</span> +<b id="win-xp">25</b> XP <span class="reward-stars" id="reward-stars">★★★</span></div><button class="next-button" id="next-button">Next adventure <span>→</span></button></div></div>
+  <script src="game.js"></script>
+</body>
+</html>
